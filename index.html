@@ -8,59 +8,82 @@
 	<script src="javascript.js"></script>
 </head>
 <body>
-	<div id="tres_barrinhas">≡</div>
-	<div id="menu">
-		<div id="blog_no_menu">
-			<h1>Visite nosso blog:</h1>
-			<p>Receita de Caipirinha: 3 limões</p>
-			<p class="data_do_post">10/05/2016 de <span class="autor">Blog da NN</span></p>
-			<p>Receita de Caipirinha: 3 limões</p>
-			<p class="data_do_post">10/05/2016 de <span class="autor">Blog da NN</span></p>
-			<p>Receita de Caipirinha: 3 limões</p>
-			<p class="data_do_post">10/05/2016 de <span class="autor">Blog da NN</span></p>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#section_quem_somos">Quem somos</a></li>
-				<li><a href="#section_servicos">Serviços</a></li>
-				<li><a href="#section_cardapios">Cardápios</a></li>
-				<li><a href="#section_eventos">Eventos</a></li>
-				<li><a href="#section_contato">Contato</a></li>
-				<div class="links_sociais">
-					<a href="https://www.facebook.com/nnbartenders/"><img src="imagens/menu/facebook.png"></a>
-					<a href="https://www.instagram.com/nnbartenders/"><img src="imagens/menu/instagram.png"></a>
-				</div>
-			</ul>
-		</nav>
-	</div>
-	<section id="section_home">
-		<div class="layers" id="layer1"></div>
-		<div class="layers" id="layer2"></div>
-		<div class="layers" id="layer3"></div>
-		<div class="overlay">
-			<div id="carimbo"></div>
-			<div id="texto_na_home">
-				<h1>NN BARTENDERS</h1>
-				<h2>SERVIÇOS DE BAR PARA EVENTOS</h2>
-			</div>
+	<nav id="menu">
+		<span id="tres_barrinhas">≡</span>
+		<a href="#quem_somos">Quem somos</a>
+		<a href="#servicos">Serviços</a>
+		<a href="#cardapios">Cardápios</a>
+		<a href="#eventos">Eventos</a>
+		<a href="#contatos">Contatos</a>
+	</nav>
+	<section id="home">
+		<div id="texto_na_home">
+			<h1>NN BARTENDERS</h1>
+			<h2>SERVIÇOS DE BAR PARA EVENTOS</h2>
 		</div>
 	</section>
-	<section id="section_quem_somos">
+	<section id="quem_somos">
 		<h1>QUEM SOMOS</h1>
 		<h2>Um pouco sobre a NN Bartenders</h2>
 		<p>A <strong>NN Bartenders</strong> atua no mercado de festas e eventos oferecendo um serviço de bar totalmente personalizado e com excelência em atendimento. A nossa missão é transformar sonhos em realidade, e para isso contamos com uma equipe de bartenders profissionais, uniformizados e capacitados a preparar drinks e coquetéis especiais e deliciosos.</p>
-		<p>Possuímos uma infraestrutura completa e cardápios adaptados de acordo com o cliente e a necessidade da festa. Nosso serviço inclui quatro horas de open bar, decoração completa com frutas, spots de luz, especiarias, montagem e desmontagem da estrutura do bar, bebidas e insumos necessários para o serviço.</p>
-		<div id="galeria_modal">
-			<span class="imagem_galeria"></span>
-			<span class="imagem_galeria"></span>
-			<span class="imagem_galeria"></span>
-			<span class="imagem_galeria"></span>
+		<div class="galeria">
+			<img src="imagens/quem_somos/foto1.jpg">
+			<img src="imagens/quem_somos/foto2.jpg">
+			<img src="imagens/quem_somos/foto3.jpg">
+			<img src="imagens/quem_somos/foto4.jpg">
 		</div>
 	</section>
-	<section id="section_servicos">
-		<div class="seta_baixo"></div>
-		<h1>NOSSOS SERVIÇOS</h1>
+	<section id="servicos">
+		<h1>SERVIÇOS</h1>
 		<h2>O que podemos oferecer para você</h2>
+		<p>Possuímos uma infraestrutura completa e cardápios adaptados de acordo com o cliente e a necessidade da festa. Nosso serviço inclui quatro horas de open bar, decoração completa com frutas, spots de luz, especiarias, montagem e desmontagem da estrutura do bar, bebidas e insumos necessários para o serviço.</p>
+		<a href="#contatos">Solicite um orçamento</a>
+	</section>
+	<section id="cardapios">
+		<h1>CARDÁPIOS</h1>
+		<h2>Exemplos de nossas opções</h2>
+		<div class="galeria">
+			<img src="imagens/cardapios/foto1.jpg">
+			<img src="imagens/cardapios/foto2.jpg">
+			<img src="imagens/cardapios/foto3.jpg">
+			<img src="imagens/cardapios/foto4.jpg">
+		</div>
+	</section>
+	<section id="eventos">
+		<h1>EVENTOS</h1>
+		<h2>Atuamos nessas categorias</h2>
+		<div class="galeria">
+			<ul>
+				<li>Casamentos</li>
+				<li>Aniversários</li>
+				<li>Formaturas</li>
+				<li>Festas Infantis</li>
+				<li>Coquetéis</li>
+				<li>Lançamentos</li>
+			</ul>
+			<img src="imagens/eventos/foto1.jpg">
+			<img src="imagens/eventos/foto2.jpg">
+			<img src="imagens/eventos/foto3.jpg">
+		</div>
+	</section>
+	<section id="contatos">
+		<h1>CONTATOS</h1>
+		<h2>Estamos ouvindo</h2>
+		<ul>
+			<li id="telefones">
+				<img src="imagens/contatos/whatsapp.png">
+				<span>(13) 99632-6013</span>
+				<span>(13) 97404-7283</span>
+				<span>(13) 97406-7031</span>
+			</li>
+			<li>
+				<img src="imagens/contatos/gmail.png">nnbartenders@gmail.com
+			</li>
+		</ul>
+		<div class="links_sociais">
+			<a id="facebook" href="https://www.facebook.com/nnbartenders/"><img src="imagens/contatos/facebook.png"></a>
+			<a id="instagram" href="https://www.instagram.com/nnbartenders/"><img src="imagens/contatos/instagram.png"></a>
+		</div>
 	</section>
 </body>
 </html>
