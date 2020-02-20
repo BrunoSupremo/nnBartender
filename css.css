@@ -28,7 +28,7 @@ body{
 section{
 	width: 100%;
 	position: relative;
-    box-shadow: 0 3px var(--azul) inset;
+	box-shadow: 0 3px var(--azul) inset;
 	background-color: var(--branco_claro);
 	padding: 6% 0;
 }
@@ -52,7 +52,7 @@ section::after{
 section:nth-child(odd)::after{
 	border-color: var(--branco_claro) transparent transparent;
 }
-#home::before, #home::after, #quem_somos::before, #quem_somos::after{
+#quem_somos::before, #quem_somos::after{
 	content: unset;
 }
 section h1::before, section h1::after{
@@ -98,9 +98,9 @@ section p{
 	height: 200px;
 	flex: 1;
 	margin: 10px;
-	box-shadow: -5px 5px 0 rgba(41,34,28,0.1); /*--preto transparent*/
+	box-shadow: 0 3px var(--azul);
 	object-fit: cover;
-    background: var(--azul);
+	background: var(--azul);
 }
 ul{
 	text-align: center;
@@ -149,9 +149,10 @@ nav a{
 	font-size: 30px;
 	border-radius: .5em 0 0 .5em;
 	padding: 0.5em;
+	transition: background .75s;
 }
 nav a:hover{
-    box-shadow: 0 -10px 0 -5px var(--azul) inset;
+	box-shadow: 0 -10px 0 -5px var(--azul) inset;
 }
 nav a::before{
 	content: "";
@@ -167,10 +168,10 @@ nav a::before{
 	top: -5px;
 }
 nav a:hover::before{
-    transform: rotate(135deg);
-    border: 1px solid var(--azul);
-    background-color: var(--azul);
-    box-shadow: 0 0 0 2px var(--azul);
+	transform: rotate(135deg);
+	border: 1px solid var(--azul);
+	background-color: var(--azul);
+	box-shadow: 0 0 0 2px var(--azul);
 }
 /*FIM CONFIGS MENU*/
 
@@ -193,6 +194,18 @@ nav a:hover::before{
 	animation: trocaImages 10s infinite;
 }
 #home::before{
+	content: "";
+	position: absolute;
+	background:
+	repeating-linear-gradient(black, transparent 1px, transparent 3px),
+	repeating-linear-gradient(90deg, black, transparent 1px, transparent 3px);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border: none;
+}
+#home::after{
 	content: "";
 	position: absolute;
 	top: 9%;
@@ -226,10 +239,6 @@ nav a:hover::before{
 }
 /*FIM - SECTION HOME*/
 
-/*INICIO - SECTION QUEM SOMOS*/
-
-/*FIM - SECTION QUEM SOMOS*/
-
 /*INICIO SECTION SERVICOS*/
 #servicos{
 	text-align: center;
@@ -240,6 +249,10 @@ nav a:hover::before{
 	border: 2px solid var(--azul);
 	display: inline-block;
 	margin-top: 1em;
+	transition: .25s;
+}
+#servicos a:hover{
+	box-shadow: 0 2px var(--azul);
 }
 /*FIM DA SECTION SERVICOS*/
 
