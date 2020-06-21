@@ -30,7 +30,7 @@ section{
 	position: relative;
 	box-shadow: 0 3px var(--azul) inset;
 	background-color: var(--branco_claro);
-	padding: 6% 0;
+	padding: 2em 0;
 }
 section:nth-child(odd){
 	background-color: var(--branco_escuro);
@@ -109,7 +109,7 @@ ul{
 /*INICIO - MENU*/
 nav{
 	font-family: GeoSlab;
-	right: -10em;
+	right: -100%;
 	z-index: 10;
 	position: fixed;
 	transition: .75s;
@@ -122,10 +122,13 @@ nav{
 }
 /* .menu_aberto e .fundo_visivel são adicionados via js*/
 nav.menu_aberto a, #tres_barrinhas.fundo_visivel{
-	background-color: rgba(41,34,28,0.7);
+	background-color: rgba(41,34,28,0.9);
 }
 nav.menu_aberto{
 	right: 0em;
+}
+nav.menu_aberto #tres_barrinhas{
+	border-radius: 0;
 }
 #tres_barrinhas{
 	position: fixed;
@@ -134,7 +137,7 @@ nav.menu_aberto{
 	align-items: center;
 	justify-content: center;
 	font-size: 90px;
-	color: white;
+	color: var(--branco_claro);
 	transition: .3s;
 	border-radius: 1em;
 	width: 1em;
@@ -143,11 +146,11 @@ nav.menu_aberto{
 	top: 0;
 }
 nav a{
-	color: white;
+	color: var(--branco_claro);
 	text-decoration: none;
 	display: inline-block;
 	font-size: 30px;
-	border-radius: .5em 0 0 .5em;
+	border: 2px solid var(--azul);
 	padding: 0.5em;
 	transition: background .75s;
 }
@@ -248,7 +251,7 @@ nav a:hover::before{
 	padding: .5em 1em;
 	border: 2px solid var(--azul);
 	display: inline-block;
-	margin-top: 1em;
+	margin: 2em 0 1em;
 	transition: .25s;
 }
 #servicos a:hover{
@@ -300,4 +303,15 @@ nav a:hover::before{
 }
 .links_sociais a img{
 	filter: invert(1);
+}
+
+/*para telas pequenas*/
+@media screen and (max-width: 450px) {
+	nav {
+		width: 100%;
+		transition: none;
+	}
+	nav a{
+		transition: none;
+	}
 }
