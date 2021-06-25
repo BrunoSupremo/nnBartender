@@ -24,9 +24,9 @@ html{
 }
 body{
 	color: var(--preto);
+	width: calc(100% - 200px - 1em);
 }
 section{
-	width: 100%;
 	position: relative;
 	box-shadow: 0 3px var(--azul) inset;
 	background-color: var(--branco_claro);
@@ -35,25 +35,17 @@ section{
 section:nth-child(odd){
 	background-color: var(--branco_escuro);
 }
-section::before, section::after{
+section:not(#home, #contatos)::after{
 	content: "";
 	position: absolute;
 	left: calc(50% - 1em);
-	top: 0;
-	width: 0;
-	height: 0;
-	border: 1em solid;
-	border-color: var(--azul) transparent transparent;
-}
-section::after{
-	top: -3px;
-	border-color: var(--branco_escuro) transparent transparent;
-}
-section:nth-child(odd)::after{
-	border-color: var(--branco_claro) transparent transparent;
-}
-#quem_somos::before, #quem_somos::after{
-	content: unset;
+	bottom: calc(-1em - 3px);
+	padding: 1em;
+	border-right: 3px solid var(--azul);
+	border-bottom: 3px solid var(--azul);
+	transform: rotate(45deg);
+	background-color: inherit;
+	z-index: 1;
 }
 section h1::before, section h1::after{
 	content: "";
@@ -108,45 +100,22 @@ ul{
 }
 /*INICIO - MENU*/
 nav{
+	background: var(--preto);
+	color: var(--branco_claro);
 	font-family: GeoSlab;
-	right: -100%;
-	z-index: 10;
 	position: fixed;
-	transition: .75s;
 	display: flex;
+	width: calc(200px + 1em);
+	height: 100vh;
+	padding: 0 .5em;
+	box-sizing: border-box;
+	right: 0;
 	flex-direction: column;
 	justify-content: space-evenly;
-	padding-top: 90px;
-	height: 100%;
-	box-sizing: border-box;
-}
-/* .menu_aberto e .fundo_visivel são adicionados via js*/
-nav.menu_aberto a, #tres_barrinhas.fundo_visivel{
-	background-color: rgba(41,34,28,0.9);
-}
-nav.menu_aberto{
-	right: 0em;
-}
-nav.menu_aberto #tres_barrinhas{
-	border-radius: 0;
-}
-#tres_barrinhas{
-	position: fixed;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 90px;
-	color: var(--branco_claro);
-	transition: .3s;
-	border-radius: 1em;
-	width: 1em;
-	height: 1em;
-	right: 0;
-	top: 0;
+	z-index: 2;
 }
 nav a{
-	color: var(--branco_claro);
+	color: inherit;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 30px;
@@ -175,6 +144,16 @@ nav a:hover::before{
 	border: 1px solid var(--azul);
 	background-color: var(--azul);
 	box-shadow: 0 0 0 2px var(--azul);
+}
+nav a#home_link{
+	background-image: url(imagens/home/carimbo_nn.png);
+	height: 130px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: none;
+}
+nav a#home_link::before{
+	content: unset;
 }
 /*FIM CONFIGS MENU*/
 
@@ -208,23 +187,11 @@ nav a:hover::before{
 	left: 0;
 	border: none;
 }
-#home::after{
-	content: "";
-	position: absolute;
-	top: 9%;
-	left: 7%;  
-	background-image: url(imagens/home/carimbo_nn.png);
-	width: 4.5em;
-	height: 5.5em;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	border: none;
-}
 #home #texto_na_home{
 	bottom: 3em;
 	position: absolute;
 	width: 100%;
+	font-size: max(2vw, 1em);
 }
 #home h1::before, #home h1::after{
 	content: unset;
@@ -306,12 +273,33 @@ nav a:hover::before{
 }
 
 /*para telas pequenas*/
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
+	body{
+		width: initial;
+	}
 	nav {
-		width: 100%;
-		transition: none;
+		top: 0;
+		height: 2em;
+		width: 100vw;
+		box-shadow: 0 -1px var(--azul) inset;
+	}
+	nav::before{
+		content: "≡ Menu";
+		text-align: center;
 	}
 	nav a{
-		transition: none;
+		display: none;
+	}
+	nav.menu_aberto{
+		height: 100vh;
+	}
+	nav.menu_aberto::before{
+		content: "× Menu";
+	}
+	nav.menu_aberto a{
+		display: inline-block;
+	}
+	#home #texto_na_home{
+		font-size: 5vw;
 	}
 }
